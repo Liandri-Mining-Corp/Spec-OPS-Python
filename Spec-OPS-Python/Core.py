@@ -24,15 +24,92 @@ if __name__ == "__main__":
             os.system("dir")
 
 
-        def TurnonPrivate():
-            os.system("Windows Privacy script.reg")
-
-        def Turnon2():
+        def TurnoffPrivate():
             with winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER) as hkey:
-              with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam", 0, winreg.KEY_ALL_ACCESS) as sub_key:
-                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
-                  winreg.CloseKey(hkey)
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                  winreg.CloseKey(sub_key)
                   print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                      winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                      winreg.CloseKey(sub_key)
+                      print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCallHistory", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                      winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                      winreg.CloseKey(sub_key)
+                      print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                      winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                      winreg.CloseKey(sub_key)
+                      print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                      winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                      winreg.CloseKey(sub_key)
+                      print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appointments", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                      winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Allow")
+                      winreg.CloseKey(sub_key)
+                      print("done")
+
+
+
+        def TurnonPrivate():
+            with winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER) as hkey:
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCallHistory", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
+                with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appointments", 0, winreg.KEY_ALL_ACCESS) as sub_key:
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(sub_key)
+                  print("done")
+
 
 
         # UI Code
@@ -42,8 +119,8 @@ if __name__ == "__main__":
 
         # UI Code Buttons
         Powerplanbutton = Button(root, text="Powerplan", command=Powerplan).grid(row=1, column=1)
-        RegPriv = Button(root, text= "Private Mode", command=TurnonPrivate).grid(row=2,column=2)
-        Test = Button(root, text= "Test", command=Turnon2).grid(row=3,column=3)
+        RegPriv = Button(root, text= "Private Mode on", command=TurnonPrivate).grid(row=2,column=2)
+        Test = Button(root, text= "Private Mode off", command=TurnoffPrivate).grid(row=3,column=3)
 
 
         # end of code
