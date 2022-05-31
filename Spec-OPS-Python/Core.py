@@ -28,10 +28,11 @@ if __name__ == "__main__":
             os.system("Windows Privacy script.reg")
 
         def Turnon2():
-            with winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE) as hkey:
+            with winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER) as hkey:
               with winreg.OpenKey(hkey, r"SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam", 0, winreg.KEY_ALL_ACCESS) as sub_key:
-                  current_path = winreg.EnumValue(sub_key,3)[1]
-                  print(f"{current_path=}")
+                  winreg.SetValueEx(sub_key, "Value",0, winreg.REG_SZ, "Deny")
+                  winreg.CloseKey(hkey)
+                  print("done")
 
 
         # UI Code
