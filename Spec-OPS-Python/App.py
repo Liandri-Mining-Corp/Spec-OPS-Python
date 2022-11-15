@@ -16,7 +16,7 @@ class App(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 button - pythonspot.com'
+        self.title = 'Spec-Ops'
         self.left = 10
         self.top = 10
         self.width = 320
@@ -30,7 +30,12 @@ class App(QWidget):
         buttonAll = QPushButton('Boost!', self)
         buttonAll.setToolTip('Fire at Will')
         buttonAll.move(150,70)
-        buttonAll.clicked.connect(self.Powerplan)
+        buttonAll.clicked.connect(self.Boost)
+
+        buttonPower = QPushButton('Effenience', self)
+        buttonPower.setToolTip('Fire at Will')
+        buttonPower.move(160,45)
+        buttonPower.clicked.connect(self.Powerplan)
         
         buttonPOF = QPushButton('Privacy off', self)
         buttonPOF.setToolTip('Fire at Will')
@@ -45,11 +50,13 @@ class App(QWidget):
         self.show()
 
     @pyqtSlot()
-    def Powerplan(self):
-            os.system("powercfg /import 'Spec-OPS-Python\ExternalData\Data\Powerplan.cfg'")
-            os.system("powercfg /setactive Number")
+    def Boost(self):
             os.system('dir')
             os.system('Spec-OPS-Python\ExternalData\Batchs\deltemp.bat')
+
+    def Powerplan(self):
+            os.system("powercfg /import 'Spec-OPS-Python\ExternalData\Data\Powerplan.pow'")
+            os.system("powercfg /setactive Number")
 
     def TurnoffPrivate(self):
         with winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER) as hkey:
