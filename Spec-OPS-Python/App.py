@@ -1,8 +1,9 @@
 import sys
+import platform
 import os
 import winreg
 import ctypes
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
@@ -29,23 +30,28 @@ class App(QWidget):
         
         buttonAll = QPushButton('Boost!', self)
         buttonAll.setToolTip('Fire at Will')
-        buttonAll.move(150,45)
+        buttonAll.move(150,70)
         buttonAll.clicked.connect(self.Boost)
 
         buttonPower = QPushButton('Effenience', self)
         buttonPower.setToolTip('Fire at Will')
-        buttonPower.move(50,45)
+        buttonPower.move(160,45)
         buttonPower.clicked.connect(self.Powerplan)
         
         buttonPOF = QPushButton('Privacy off', self)
         buttonPOF.setToolTip('Fire at Will')
-        buttonPOF.move(150, 20)
+        buttonPOF.move(50,90)
         buttonPOF.clicked.connect(self.TurnoffPrivate)
 
         buttonPON = QPushButton('Privacy on', self)
         buttonPON.setToolTip('Fire at Will')
         buttonPON.move(50,20)
         buttonPON.clicked.connect(self.TurnonPrivate)
+
+        buttonPON = QPushButton('System Info', self)
+        buttonPON.setToolTip('Fire at Will')
+        buttonPON.move(20,120)
+        buttonPON.clicked.connect(self.getsysinfo)
 
         self.show()
 
@@ -57,6 +63,19 @@ class App(QWidget):
     def Powerplan(self):
             os.system("powercfg /import 'Spec-OPS-Python\ExternalData\Data\Powerplan.pow'")
             os.system("powercfg /setactive Number")
+
+    def getsysinfo(self):
+       maschine = platform.machine()
+       version = platform.version()
+       platformer = platform.platform()
+       lucke = " "
+       Systemer = platform.system()
+       processor = platform.processor()
+       text = maschine + lucke + version + lucke + platformer + lucke + Systemer + lucke + processor
+       alert = QMessageBox()
+       alert.setText(text)
+       alert.exec()
+
 
     def TurnoffPrivate(self):
         with winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER) as hkey:
