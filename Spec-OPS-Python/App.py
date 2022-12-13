@@ -30,27 +30,27 @@ class App(QWidget):
         
         buttonAll = QPushButton('Boost!', self)
         buttonAll.setToolTip('Fire at Will')
-        buttonAll.move(150,70)
+        buttonAll.move(150,40)
         buttonAll.clicked.connect(self.Boost)
 
         buttonPower = QPushButton('Effenience', self)
         buttonPower.setToolTip('Fire at Will')
-        buttonPower.move(160,45)
+        buttonPower.move(50,40)
         buttonPower.clicked.connect(self.Powerplan)
         
         buttonPOF = QPushButton('Privacy off', self)
         buttonPOF.setToolTip('Fire at Will')
-        buttonPOF.move(50,90)
+        buttonPOF.move(50,60)
         buttonPOF.clicked.connect(self.TurnoffPrivate)
 
         buttonPON = QPushButton('Privacy on', self)
         buttonPON.setToolTip('Fire at Will')
-        buttonPON.move(50,20)
+        buttonPON.move(150,60)
         buttonPON.clicked.connect(self.TurnonPrivate)
 
         buttonPON = QPushButton('System Info', self)
         buttonPON.setToolTip('Fire at Will')
-        buttonPON.move(20,120)
+        buttonPON.move(100,80)
         buttonPON.clicked.connect(self.getsysinfo)
 
         self.show()
