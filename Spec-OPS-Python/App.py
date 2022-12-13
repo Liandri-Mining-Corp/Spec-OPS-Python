@@ -50,7 +50,7 @@ class App(QWidget):
 
         buttonPON = QPushButton('System Info', self)
         buttonPON.setToolTip('Fire at Will')
-        buttonPON.move(100,95)
+        buttonPON.move(100,110)
         buttonPON.clicked.connect(self.getsysinfo)
 
         self.show()
