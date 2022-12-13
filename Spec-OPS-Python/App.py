@@ -40,17 +40,17 @@ class App(QWidget):
         
         buttonPOF = QPushButton('Privacy off', self)
         buttonPOF.setToolTip('Fire at Will')
-        buttonPOF.move(50,60)
+        buttonPOF.move(50,75)
         buttonPOF.clicked.connect(self.TurnoffPrivate)
 
         buttonPON = QPushButton('Privacy on', self)
         buttonPON.setToolTip('Fire at Will')
-        buttonPON.move(150,60)
+        buttonPON.move(150,75)
         buttonPON.clicked.connect(self.TurnonPrivate)
 
         buttonPON = QPushButton('System Info', self)
         buttonPON.setToolTip('Fire at Will')
-        buttonPON.move(100,80)
+        buttonPON.move(100,95)
         buttonPON.clicked.connect(self.getsysinfo)
 
         self.show()
