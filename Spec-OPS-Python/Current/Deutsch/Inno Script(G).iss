@@ -16,8 +16,8 @@ SolidCompression=yes
 [Files]
 Source: "App (Deutsch).exe"; DestDir: "{app}"
 Source: "Powerscheme.pow"; DestDir: "{app}"
-Source: "boost(G).bat"; DestDir: "{app}"
-Source: "deltemp(G).bat"; DestDir: "{app}"
+Source: "boostG.bat"; DestDir: "{app}"
+Source: "deltempG.bat"; DestDir: "{app}"
 Source: "Windows Privacy script.reg"; DestDir: "{app}"
 
 [Icons]

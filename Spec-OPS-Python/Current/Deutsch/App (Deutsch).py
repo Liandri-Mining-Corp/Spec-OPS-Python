@@ -68,8 +68,8 @@ class App(QWidget):
            # we found out that some systems aren't acception external powerplans
 
     def Boost(self):
-            os.system('boost.bat')
-            os.system('deltemp.bat')
+            os.system('boostG.bat')
+            os.system('deltempG.bat')
             #Powerplan() problem with execution, may attempt later to fix
 
     
